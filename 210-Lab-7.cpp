@@ -5,11 +5,12 @@
 using namespace std;
 
 // Function prototypes
-void reverseArray(string*);
-void displayArray(string*);
+void reverseArray(string*, const int);
+void displayArray(string*, const int);
 
 int main()
 {
+    //Declaring a constant for the size of the array so it can be easily changed
     const int size = 5;
     //Calling a dynamic array that holds 5 strings
     string *namePtr = nullptr;
@@ -17,21 +18,21 @@ int main()
 
     //Filling the array with names
     namePtr[0] = "Alice";
-    namePtr[1] = "Bob";
+    namePtr[1] = "Rachel";
     namePtr[2] = "Charlie";
     namePtr[3] = "Diana";
     namePtr[4] = "Ethan";
 
     //Displaying the original array
     cout << "Original array:" << endl;
-    displayArray(namePtr);
+    displayArray(namePtr, size);
 
     //Reversing the array
-    reverseArray(namePtr);
+    reverseArray(namePtr, size);
 
     //Displaying the reversed array
     cout << "\nReversed array:" << endl;
-    displayArray(namePtr);
+    displayArray(namePtr, size);
 
     //Freeing the dynamically allocated memory
     delete[] namePtr;
@@ -42,9 +43,9 @@ int main()
 //reversArray() swaps the values in the array to reverse their order
 //arguments: string pointer
 //returns: nothing
-void reverseArray(string* nArry)
+void reverseArray(string* nArry, const int size)
 {
-    const int size = 5;
+    
     //Using a temporary variable to swap the values
     string temp;
 
@@ -61,9 +62,9 @@ void reverseArray(string* nArry)
 //displayArray() displays the contents of the array
 //arguments: string pointer
 //returns: nothing
-void displayArray(string* nArry)
+void displayArray(string* nArry, const int size)
 {
-    const int size = 5;
+    
 
     //Looping through the array to display each name
     for (int i = 0; i < size; i++)
